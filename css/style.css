@@ -1,0 +1,627 @@
+body {
+    background-color: rgb(214 214 214);
+    animation: fade-in 1s ease-in;
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* Landing */
+
+#intro,
+#soonTm {
+    font-family: 'Lato', sans-serif;
+    position: fixed;
+    top: calc(50% - 50px);
+    right: 0;
+    width: calc(100% - 80px);
+    transform: translateY(-50%) skewX(-5deg);
+    text-align: center;
+    font-size: 50px;
+    color: #000
+}
+
+#intro::after {
+    content: "Quality CSS at a Reasonable Price";
+    display: block;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 26px;
+}
+
+#abtMe {
+    font-family: 'Lato', sans-serif;
+    text-align: left;
+    font-size: 60px;
+    color: #000;
+    margin: 95px;
+}
+
+#abtPara {
+    padding-left: 150px;
+    font-size: 30px;
+}
+
+
+/* Section : Navigation */
+
+#nav {
+    position: fixed;
+    left: 0;
+    top: 0px;
+    bottom: 0px;
+    width: max-content;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(14, 14, 14);
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 99999!important
+}
+
+.head {
+    text-align: center;
+    font-style: italic;
+    color: #fff;
+    width: 100%;
+}
+
+.navItem {
+    display: block;
+    background-color: rgb(36, 36, 36);
+    text-align: center;
+    align-items: center;
+    margin: 10px 0px;
+    border-radius: 12px;
+    pointer-events: all;
+}
+
+.navItem:not(:nth-child(2)) {
+    max-width: fit-content;
+    padding: 5px;
+    max-height: fit-content;
+}
+
+.navItem:hover {
+    cursor: pointer;
+}
+
+.navIcn {
+    font-size: 32px !important;
+    color: #fff;
+}
+
+#cssGallery.navItem {
+    padding: 3.5px
+}
+
+#cssGallery .navIcn {
+    height: 35px;
+    width: 35px;
+    filter: invert(1);
+}
+
+#home .navIcn {
+    padding: 5px
+}
+
+.tooltip {
+    position: fixed;
+    width: max-content;
+    padding: 20px;
+    height: max-content;
+    background-color: transparent;
+    transform: translate(-3px, -35.1px);
+    cursor: pointer;
+    z-index: 999999;
+}
+
+.tooltip .tooltiptext {
+    opacity: 0;
+    width: max-content;
+    background-color: rgb(36, 36, 36);
+    color: #fff;
+    text-align: center;
+    padding: 3px 13px;
+    border-radius: 6px;
+    border: 1px solid #Fff;
+    position: absolute;
+    transform: translate(20px, -16.75px);
+    pointer-events: none;
+    transition-duration: 250ms;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+}
+
+.tooltip .tooltiptext::before {
+    content: "";
+    position: absolute;
+    transform: translate(-18px, 2.75px);
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-right: 7px solid rgb(36, 36, 36);
+    background-color: transparent;
+    filter: drop-shadow(-2px -0px 0 #fff);
+}
+
+.tooltip:not(#discord):hover .tooltiptext {
+    opacity: 1;
+    transform: translatex(35px) translateY(-16.75px);
+}
+
+#home .tooltiptext {
+    transform: translate(24.25px, -19.5px);
+}
+
+#home:hover .tooltiptext {
+    transform: translate(39.25px, -19.5px)!important;
+}
+
+#commission .tooltiptext {
+    transform: translate(19px, -14.5px);
+}
+
+#aboutMe .tooltiptext {
+    transform: translate(19px, -14.5px);
+}
+
+#commission:hover .tooltiptext,
+#aboutMe:hover .tooltiptext {
+    transform: translate(34px, -14.5px)!important;
+}
+
+
+/* Gallery */
+
+#gallery {
+    margin-left: 0;
+    width: calc(100% - 75px);
+    float: right;
+    display: grid;
+    padding-bottom: 195px;
+    grid-row-gap: 100px;
+    text-align: center;
+}
+
+.title,
+.desc {
+    font-family: "Roboto Slab", sans-serif;
+    color: #000;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.desc {
+    font-style: normal;
+}
+
+.masu.desc .material-icons {
+    position: relative;
+    top: 1px
+}
+
+#cssImg {
+    display: inline-flex;
+    grid-column-gap: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    max-width: 100%;
+    z-index: -9999!important;
+}
+
+.showcase {
+    height: 320px;
+    position: relative;
+    opacity: 0.9;
+    background-color: #fff;
+    border-radius: 12px;
+    border: 2px solid #fff;
+    transition-duration: 250ms;
+    max-width: 100%;
+}
+
+.showcase:hover {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgb(0, 0, 0);
+}
+
+.CJ span {
+    text-decoration: none;
+    color: rgb(100, 65, 165);
+    font-weight: 900;
+}
+
+.CSGO,
+.p5,
+.CJ {
+    margin-top: 100px
+}
+
+.CSGO span {
+    color: rgb(187, 10, 30)
+}
+
+.p5 span {
+    color: rgb(209, 7, 57)
+}
+
+.masu span {
+    color: rgba(88, 88, 88, 1)
+}
+
+.osu span {
+    color: rgba(255, 102, 171, 1)
+}
+
+#masu .showcase {
+    height: 290px
+}
+
+#CSGO .showcase {
+    height: 285px
+}
+
+
+/* Socials */
+
+#abtMe {
+    overflow-y: hidden;
+}
+
+#socialHolder {
+    width: calc(100% - 70px);
+    right: 0;
+    position: absolute;
+    bottom: 50px;
+    align-items: center;
+}
+
+#socials {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-evenly;
+    grid-column-gap: 70px;
+    width: max-content;
+    /* background-color: rgb(14, 14, 14); */
+    margin: 0 auto;
+    text-align: center;
+    padding: 15px;
+    border-radius: 16px;
+}
+
+#socials .socialBtn {
+    /* background-color: rgb(36, 36, 36); */
+    background-color: rgb(14, 14, 14);
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    transition-duration: 250ms;
+    cursor: pointer;
+}
+
+.socialBtn:hover img {
+    transform: scale(0.9);
+}
+
+#socials img {
+    height: 40px;
+    position: relative;
+    top: 20px;
+    filter: saturate(0);
+    transition-duration: 250ms;
+    -webkit-user-drag: none;
+}
+
+#discordTip {
+    position: relative;
+    bottom: 50px;
+    margin-left: -20px;
+    width: max-content;
+    transition-duration: 250ms;
+}
+
+.discordText {
+    background-color: rgb(14, 14, 14);
+    padding: 5px;
+    border-radius: 6px;
+    color: #fff;
+    transition-duration: 250ms;
+    text-align: center
+}
+
+#krunker img {
+    filter: saturate(0)!important;
+    image-rendering: pixelated;
+}
+
+#github img {
+    filter: invert(1)
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+    #nav {
+        z-index: 0!important;
+    }
+    .tooltip {
+        display: none!important
+    }
+    #abtMe {
+        font-size: 25px;
+    }
+    #abtPara {
+        padding: 0;
+        font-size: 15px;
+        margin-left: 90px;
+    }
+    #socials {
+        grid-auto-flow: column;
+        grid-column-gap: 10px;
+        padding: 0;
+    }
+    #aboutMe {
+        max-width: 55vh
+    }
+    #cssImg {
+        flex-direction: column;
+        gap: 20px
+    }
+    .showcase {
+        height: 150px!important;
+    }
+    .socialbtn {
+        width: 50px!important;
+        height: 50px!important;
+        text-align: center;
+    }
+    .socialbtn img {
+        height: 20px!important;
+        top: 16px!important
+    }
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {
+    #nav {
+        z-index: 0!important;
+    }
+    .tooltip {
+        display: none!important
+    }
+    #abtMe {
+        font-size: 25px;
+    }
+    #abtPara {
+        padding: 0;
+        font-size: 15px;
+        margin-left: 90px;
+        margin-top: -50px
+    }
+    #socialHolder {
+        bottom: 15px
+    }
+    #socials {
+        grid-auto-flow: column;
+        grid-column-gap: 25px;
+        padding: 0;
+    }
+    #cssImg {
+        flex-direction: row;
+        gap: 20px
+    }
+    .showcase {
+        height: 160px!important;
+    }
+    .socialbtn {
+        width: 50px!important;
+        height: 50px!important;
+        text-align: center;
+    }
+    .socialbtn img {
+        height: 20px!important;
+        top: 16px!important
+    }
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+    #nav {
+        z-index: 0!important;
+    }
+    .tooltip {
+        display: none!important
+    }
+    #cssImg {
+        flex-direction: column;
+        gap: 40px
+    }
+    .showcase {
+        height: 380px!important;
+    }
+}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {
+    #nav {
+        z-index: 99999!important;
+    }
+    .tooltip {
+        display: block!important
+    }
+    #cssImg {
+        flex-direction: row;
+        gap: 40px
+    }
+    .showcase {
+        height: 250px!important;
+    }
+}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+    #nav {
+        z-index: 99999!important;
+    }
+    .tooltip {
+        display: block!important
+    }
+    #cssImg {
+        flex-direction: row;
+        gap: 40px
+    }
+    .showcase {
+        height: 280px!important;
+    }
+}
+
+
+/* Landscape Phone Fix */
+
+@media only screen and (min-width: 800px) {
+    #nav {
+        z-index: 0!important;
+    }
+    .tooltip {
+        display: none!important
+    }
+    #cssImg {
+        flex-direction: row;
+        gap: 20px
+    }
+    .showcase {
+        height: 160px!important;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    #nav {
+        max-height: 100vh
+    }
+    #cssImg {
+        flex-direction: row;
+        gap: 20px
+    }
+    .showcase {
+        height: 250px!important;
+    }
+    #socialHolder {
+        bottom: 50px
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    #nav {
+        z-index: 99999!important;
+    }
+    .tooltip {
+        display: block!important
+    }
+    #cssImg {
+        flex-direction: row;
+        gap: 20px
+    }
+    .showcase {
+        height: 340px!important;
+    }
+}
+
+@media only screen and (min-width: 912px) {
+    #nav {
+        z-index: 0!important;
+    }
+    .tooltip {
+        display: none!important
+    }
+    #cssImg {
+        flex-direction: row;
+        gap: 40px
+    }
+    .showcase {
+        height: 200px!important;
+    }
+}
+
+@media only screen and (min-width: 1368px) {
+    #nav {
+        z-index: 99999!important;
+    }
+    .tooltip {
+        display: block!important
+    }
+    #cssImg {
+        flex-direction: row;
+        gap: 40px
+    }
+    .showcase {
+        height: 340px!important;
+    }
+}
+
+
+/* Galaxy Fold Fix */
+
+@media only screen and (max-width: 280px) {
+    #nav {
+        z-index: 0!important;
+    }
+    .tooltip {
+        display: none!important
+    }
+    #socialHolder {
+        bottom: 0
+    }
+    #socials {
+        grid-auto-flow: column;
+        grid-column-gap: 5px;
+        padding: 0;
+    }
+    #cssImg {
+        flex-direction: column;
+        gap: 20px
+    }
+    .showcase {
+        height: 150px!important;
+    }
+    .socialbtn {
+        width: 50px!important;
+        height: 50px!important;
+        text-align: center;
+        transform: scale(0.7)
+    }
+}
+
+
+/* Keyframes */
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
