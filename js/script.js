@@ -3,7 +3,7 @@
 // //   document.getElementById("gallery").style.display = 'block'
 // // }
 
-// var count = 0;
+// let count = 0;
 
 // function showWindow1() {
 //     count++;
